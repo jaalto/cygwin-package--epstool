@@ -1,0 +1,39 @@
+From 9b85ec6e303ef02dc8c6927ad464bb5cc98e7d38 Mon Sep 17 00:00:00 2001
+From: Jari Aalto <jari.aalto@cante.net>
+Date: Thu, 13 Dec 2007 13:34:48 +0200
+Subject: [PATCH] Makefile: rewrite install target
+
+Signed-off-by: Jari Aalto <jari.aalto@cante.net>
+---
+ makefile |    8 +++++++-
+ 1 files changed, 7 insertions(+), 1 deletions(-)
+
+diff --git a/makefile b/makefile
+index 63b2997..5919874 100644
+--- a/makefile
++++ b/makefile
+@@ -61,7 +61,7 @@ $(OD)lib.rsp: makefile
+ 	-mkdir $(OBJDIR)
+ 	echo "dummy" > $(OD)lib.rsp
+ 
+-install: $(TARGET)
++install-old: $(TARGET)
+ 	-mkdir -p $(EPSTOOL_BASE)
+ 	chmod a+rx $(EPSTOOL_BASE)
+ 	-mkdir -p $(EPSTOOL_BINDIR)
+@@ -79,6 +79,12 @@ install: $(TARGET)
+ 	$(INSTALL) doc$(DD)gsview.css $(EPSTOOL_DOCDIR)$(DD)gsview.css
+ 	$(INSTALL) LICENCE $(EPSTOOL_DOCDIR)$(DD)LICENCE
+ 
++install:
++	install -m 755 -d $(DESTDIR)/usr/bin
++	install -m 755 -s $(BD)epstool$(EXE) $(DESTDIR)/usr/bin
++
++	install -m 755 -d $(DESTDIR)/usr/share/man/man1
++	install -m 755 doc$(DD)epstool.1 $(DESTDIR)/usr/share/man/man1
+ 
+ CYGWIN_DISTDIR=./dist
+ CYGWIN_PACKAGE=epstool-$(EPSTOOL_VERSION)-1
+-- 
+1.5.3.GIT
+

@@ -1,0 +1,79 @@
+epstool
+------------------------------------------
+
+Edit preview images and fix bounding boxes in EPS files
+
+Encapsulated PostScript (EPS) files may contain a preview to be used
+by programs that can't interpret the PostScript code. epstool can
+create and extract such previews.
+
+Runtime requirements:
+  cygwin
+
+Build requirements:
+  cygwin
+
+Canonical homepage:
+  http://www.cs.wisc.edu/~ghost/gsview/epstool.htm
+  http://packages.debian.org/epstool
+
+Canonical download:
+  See above
+
+Version control repository:
+
+Mailing list:
+
+Forum / Wiki:
+
+IRC channel:
+
+Upstream contact:
+  Maintainer: Russell Lang <gsview@ghostgum.com.au>
+  Bugs: Russell Lang <gsview@ghostgum.com.au>
+
+License:
+  GPL
+
+Language:
+  C
+
+------------------------------------
+
+Build instructions:
+  unpack epstool-3.08-2-src.tar.bz2
+    if you use setup to install this src package, it will be
+    unpacked under /usr/src automatically
+  cd /usr/src
+  ./epstool*.sh all
+
+This will create:
+  epstool-3.08-2.tar.bz2
+  epstool-3.08-2-src.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary distribution:
+
+/usr/bin/epstool.exe
+/usr/share/doc/Cygwin/epstool-3.08.README
+/usr/share/doc/epstool-3.08/LICENCE
+/usr/share/doc/epstool-3.08/epstool.htm
+/usr/share/doc/epstool-3.08/epstool.txt
+/usr/share/doc/epstool-3.08/gsview.css
+/usr/share/man/man1/epstool.1.gz
+
+------------------
+
+Port Notes: (Jari Aalto)
+- Makefile: install target needs DESTDIR
+
+----- version 3.08-2 -----
+- New maintainer 2007-12-13 Jari Aalto
+- New packaging. Added Makefile patch.
+
+----- version 3.08-1 -----
+- Initial release James R. Phillips
+
+Cygwin port maintained by: Jari Aalto <jari.aalto@cante.net>
+Copyright (C) 2007 Jari Aalto; Licenced under GPL v2 or later

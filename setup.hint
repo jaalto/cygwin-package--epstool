@@ -1,0 +1,6 @@
+sdesc: "Edit preview images and fix bounding boxes in EPS files"
+ldesc: "Encapsulated PostScript (EPS) files may contain a preview to be used
+by programs that can't interpret the PostScript code. epstool can
+create and extract such previews."
+category: Graphics
+requires: cygwin
